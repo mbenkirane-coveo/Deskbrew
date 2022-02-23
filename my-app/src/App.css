@@ -1,0 +1,127 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.header{
+  font-size: 2.3em;
+  padding-bottom:1.2em;
+  text-align: center;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.basket{
+  float: right;
+  width: 400px;
+  padding: 30px;
+  background-color: rgba(128, 0, 0, 0.69);
+  height: auto;
+}
+
+.basketItems {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.basketFooter{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.packageFooter{
+  display: flex;
+  align-items: end;
+}
+
+.packages{
+  float: left;
+  padding: 30px;
+  background-color: rgba(68, 67, 67, 0.35);
+}
+
+.deleteAllButton {
+  position: relative;
+  left: 0;
+  bottom: 0;
+}
+
+.downloadScript {
+  position: relative;
+  /*right: ;*/
+  /*bottom: 0;*/
+}
+
+.basket .package-card{
+  background-color: rgba(255, 255, 0, 0.25);
+  width: 40%;
+  padding: 20px;
+  border: 2px solid black;
+}
+
+.packages .package-card{
+  background-color: rgba(0, 217, 255, 0.25);
+  width: 40%;
+  float: left;
+  padding: 20px;
+  border: 2px solid black;
+}
+
+.package-card{
+  display: flex;
+  justify-content: center;
+}
+
+/*.center {*/
+/*  position: relative;*/
+/*  right:    0;*/
+/*  bottom:   0;*/
+/*  text-align: center;*/
+/*}*/
+
+.dropSign{
+  text-align: center;
+}
+
+h1{
+  text-align: center;
+}
+
+h2{
+  text-align: center;
+}
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
