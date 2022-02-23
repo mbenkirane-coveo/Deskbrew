@@ -36,11 +36,18 @@ function installPackages(basket){
     element.click();
 }
 
+function addCustomCommand(name,script,basket,setBasket){
+    let id = basket.length + 1;
+    let item = { id,name,script};
+    console.log(item)
+    setBasket([...basket, item])
+}
+
 export const Basket = () => {
     const [basket, setBasket] = useState([])
     const [{ isOver }, dropRef] = useDrop({
            accept: 'package',
-           drop: (item) => !basket.map(pack => pack.id).includes(item.id) ? (setBasket([...basket, item])) : undefined,
+           drop: (item) => !basket.map(pack => pack.id).includes(item.id) ? (setBasket([...basket, item]), console.log(item)) : undefined,
            collect: (monitor) => ({
                 isOver: monitor.isOver()
            })
@@ -67,8 +74,8 @@ export const Basket = () => {
                     </div>
 
                     <div className='basketFooter'>
-                        { basket.length == 0 ? <h3>Drag and drop packages here !</h3> : <> <button className="downloadScript" onClick={() => installPackages(basket)}>Download</button>  <button className="deleteAllButton" onClick={() => setBasket([])}>Reset <img width = "20" height = "20" src={require('./resources/trash-icon.png')} /></button> </>}
-                        <button>Add custom commands</button>
+                        { basket.length === 0 ? <h3>Drag and drop packages here !</h3> : <> <button className="downloadScript" onClick={() => installPackages(basket)}>Download</button>  <button className="deleteAllButton" onClick={() => setBasket([])}>Reset <img width = "20" height = "20" src={require('./resources/trash-icon.png')} /></button> </>}
+                        <button onClick={() => addCustomCommand("test", "echo test", basket,setBasket)}>Add custom commands</button>
                     </div>
                 </div>
             </div>
