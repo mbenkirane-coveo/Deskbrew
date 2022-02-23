@@ -37,7 +37,7 @@ function installPackages(basket){
 }
 
 function addCustomCommand(name,script,basket,setBasket){
-    let id = Packages.length + 1;
+    let id = Packages.length + basket.length + 1;
     let item = { id,name,script};
     console.log(item)
     setBasket([...basket, item])
